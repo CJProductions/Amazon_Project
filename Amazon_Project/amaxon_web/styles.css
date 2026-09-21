@@ -1,0 +1,45 @@
+
+body {
+    background-color: #353e51;
+    margin: 0;
+    font-family: Arial;
+}
+
+#navi {
+    background-color: #232f3e;
+    padding: 1px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    display: flex;
+}
+
+#thick_hr {
+    margin: 0;
+    border: 8px solid #FF9900;
+}
+
+#amzon {
+    height: 76px;
+    margin-top: 70px;
+    margin-left: 350px;
+}
+
+#cog {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(105%);
+    height: 100px;
+    padding: 0;
+}
+
+.sets {
+    margin-top: 50px;
+    margin-right: 450px;
+    margin-left: 50px;
+}
+
+#hor {
+    margin: 0;
+    border: 2px solid black;
+
+
+ }
