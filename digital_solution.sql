@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 23, 2026 at 02:56 PM
+-- Generation Time: Sep 23, 2026 at 03:39 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -32,8 +32,7 @@ CREATE TABLE `amazon_talent_team` (
   `username` text NOT NULL,
   `password` text NOT NULL,
   `phone_number` text NOT NULL,
-  `amazon_email` text NOT NULL,
-  `staff_id` int NOT NULL
+  `amazon_email` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -47,21 +46,22 @@ CREATE TABLE `career_adviser` (
   `f_name` text NOT NULL,
   `s_name` text NOT NULL,
   `career_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` text NOT NULL,
+  `school_id` int NOT NULL,
   `amazon_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staff`
+-- Table structure for table `school`
 --
 
-CREATE TABLE `staff` (
-  `staff_id` int NOT NULL,
-  `username` text NOT NULL,
-  `password` int NOT NULL,
-  `staff_email` int NOT NULL,
-  `phone_number` int NOT NULL,
+CREATE TABLE `school` (
+  `school_id` int NOT NULL,
+  `school_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `school_phone` text NOT NULL,
+  `school_email` int NOT NULL,
   `amazon_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -75,11 +75,13 @@ CREATE TABLE `t_level_student` (
   `student_id` int NOT NULL,
   `f_name` text NOT NULL,
   `s_name` text NOT NULL,
-  `email` text NOT NULL,
+  `student_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` text NOT NULL,
   `year_group` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `pathway` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `school` text NOT NULL,
-  `school_id` int NOT NULL
+  `school_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `amazon_id` int NOT NULL,
+  `career_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -90,29 +92,31 @@ CREATE TABLE `t_level_student` (
 -- Indexes for table `amazon_talent_team`
 --
 ALTER TABLE `amazon_talent_team`
-  ADD PRIMARY KEY (`amazon_id`),
-  ADD UNIQUE KEY `staff_id` (`staff_id`);
+  ADD PRIMARY KEY (`amazon_id`);
 
 --
 -- Indexes for table `career_adviser`
 --
 ALTER TABLE `career_adviser`
   ADD PRIMARY KEY (`career_id`),
-  ADD UNIQUE KEY `amazon_id` (`amazon_id`);
+  ADD KEY `amazon_id_2` (`amazon_id`),
+  ADD KEY `school_id` (`school_id`);
 
 --
--- Indexes for table `staff`
+-- Indexes for table `school`
 --
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staff_id`);
+ALTER TABLE `school`
+  ADD PRIMARY KEY (`school_id`),
+  ADD KEY `amazon_id` (`amazon_id`);
 
 --
 -- Indexes for table `t_level_student`
 --
 ALTER TABLE `t_level_student`
   ADD PRIMARY KEY (`student_id`),
-  ADD UNIQUE KEY `amazon_id` (`school_id`),
-  ADD UNIQUE KEY `school_id` (`school_id`);
+  ADD UNIQUE KEY `amazon_id` (`amazon_id`),
+  ADD UNIQUE KEY `school_id` (`amazon_id`),
+  ADD KEY `career_id` (`career_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -131,10 +135,10 @@ ALTER TABLE `career_adviser`
   MODIFY `career_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `staff`
+-- AUTO_INCREMENT for table `school`
 --
-ALTER TABLE `staff`
-  MODIFY `staff_id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `school`
+  MODIFY `school_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_level_student`
