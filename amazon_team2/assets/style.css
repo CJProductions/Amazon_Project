@@ -74,3 +74,16 @@ table {
     width: 100%;
     border-spacing: 5em 0;
 }
+
+.text_box { /* make a class */
+    width: 200px;
+    min-height: 100px; /* setting minium diameters can also remove min to have set diameters */
+    background-color: white; /* set the boxes main colour to dimgray */
+    border: 10px solid black; /* set the surrounding walls of said box in black */
+    text-align: left; /* push text to the left */
+    color: black; /* text color is black*/
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
