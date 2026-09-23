@@ -1,0 +1,61 @@
+
+
+body {
+    background-color: #353e51;
+    margin: 0;
+    font-family: Arial, serif;
+}
+
+#navi {
+    background-color: #232f3e;
+    padding: 1px;
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    border: 1px black solid;
+    color: white;
+}
+
+#thick_hr {
+    margin: 0;
+    border: 8px solid #FF9900;
+}
+
+#amazonava_logo {
+    display: flex;
+    justify-content: flex-end;
+    height: 76px;
+    margin-top: 70px;
+    margin-left: auto;
+}
+
+#cog {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(105%);
+    height: 100px;
+    padding: 0;
+}
+
+.sets {
+    margin-top: 50px;
+    margin-right: 450px;
+    margin-left: 50px;
+}
+
+#hor {
+    margin: 0;
+    border: 2px solid black;
+}
+
+#home {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(105%);
+    height: 125px;
+    padding: 0;
+    margin-top: 0;
+}
+
+#title_text {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
