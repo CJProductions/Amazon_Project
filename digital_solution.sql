@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 23, 2026 at 12:41 PM
+-- Generation Time: Sep 23, 2026 at 12:46 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -29,8 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `amazon_talent_team` (
   `amazon_id` int NOT NULL,
-  `f_name` text NOT NULL,
-  `s_name` text NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
   `phone_number` text NOT NULL,
