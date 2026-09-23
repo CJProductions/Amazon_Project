@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 23, 2026 at 12:23 PM
+-- Generation Time: Sep 23, 2026 at 12:46 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -29,8 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `amazon_talent_team` (
   `amazon_id` int NOT NULL,
-  `f_name` text NOT NULL,
-  `s_name` text NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
   `phone_number` text NOT NULL,
@@ -49,7 +47,6 @@ CREATE TABLE `career_adviser` (
   `f_name` text NOT NULL,
   `s_name` text NOT NULL,
   `career_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `appointments` int NOT NULL,
   `amazon_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -61,10 +58,25 @@ CREATE TABLE `career_adviser` (
 
 CREATE TABLE `client` (
   `client_id` int NOT NULL,
-  `username` text NOT NULL,
+  `username` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` text NOT NULL,
   `personal_email` text NOT NULL,
   `phone_number` text NOT NULL,
+  `amazon_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `customer_id` int NOT NULL,
+  `username` int NOT NULL,
+  `password` int NOT NULL,
+  `email_address` int NOT NULL,
+  `phone_number` int NOT NULL,
   `amazon_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -110,6 +122,13 @@ ALTER TABLE `client`
   ADD UNIQUE KEY `amazon_id` (`amazon_id`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customer_id`),
+  ADD UNIQUE KEY `amazon_id` (`amazon_id`);
+
+--
 -- Indexes for table `t_level_student`
 --
 ALTER TABLE `t_level_student`
@@ -137,6 +156,12 @@ ALTER TABLE `career_adviser`
 --
 ALTER TABLE `client`
   MODIFY `client_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `customer_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_level_student`
