@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="style.css"><!--uses the style sheet to change the web page to the style choices set in the web page-->
 
 
+<hr id="hor">
+<hr id="thick_hr">
+<hr id="hor">
+
 <table id="navi">
     <tr>
         <td> <a href="index.php"><img src="assets/images/home.png" alt="home" id="home"></a> <br> <a href="index.php"> Home </a> </td>
@@ -10,4 +14,8 @@
         <td> <a href="login.php"><img src="assets/images/login.png" alt="home" id="home"></a> <br> <a href="login.php"> Login </a> </td>
     </tr>
 </table>
+
+<hr id="hor">
+<hr id="thick_hr">
+<hr id="hor">
 

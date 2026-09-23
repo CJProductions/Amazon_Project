@@ -12,7 +12,9 @@
     <img src="assets/images/availableatamazon.png" alt="Available at Amazon" id="amazonava_logo">
 
 </div>
+<hr id="hor">
 <hr id="thick_hr">
 <hr id="hor">
+
 </body>
 </html>
