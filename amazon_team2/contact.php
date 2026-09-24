@@ -24,6 +24,7 @@ $message = $_POST["message"];
         <?php
         require_once "assets/navi.php"
         ?>
+
         <div class="text_box">
             <form method="post" action="">
 
@@ -43,6 +44,7 @@ $message = $_POST["message"];
                 <input type='submit' name='send' value='send' />
             </form>
         </div>
+
         </body>
     </html>
 
