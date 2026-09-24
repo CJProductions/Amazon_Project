@@ -3,13 +3,13 @@
 <html>
     <head>
         <title>CONTACT</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
         <div class="navi">
-            <a href="settings.php"><img src="cog.png" alt="Settings" id="set"></a>
+            <a href="settings.php"><img src="assets/images/cog.png" alt="Settings" id="set"></a>
             <h1 id="m_title">Contact</h1>
-            <a href="https://www.amazon.co.uk"><img src="availableatamazon.png" alt="Available at Amazon" id="azon"></a>
+            <a href="https://www.amazon.co.uk"><img src="assets/images/availableatamazon.png" alt="Available at Amazon" id="azon"></a>
         </div>
         <hr id="thick_hr">
                 <div class="navbar">
