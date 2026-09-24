@@ -1,6 +1,5 @@
 
-
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- States this part of the document as a HTML file. -->
 
 <html>
     <head>
