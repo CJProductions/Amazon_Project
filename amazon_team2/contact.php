@@ -32,7 +32,7 @@ $message = $_POST["message"];
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <br>
 
-
+                <br><br>
                 <label for="subject">Subject of matter:</label><br>
                 <input type="text" name="subject" id="subject" placeholder="Subject" required>
                 <br>
@@ -40,7 +40,7 @@ $message = $_POST["message"];
                 <label for="message">Message:</label><br>
                 <input type="text" name="message" id="message" placeholder="Message" required>
                 <br>
-
+                <br><br>
                 <input type='submit' name='send' value='send' />
             </form>
         </div>
