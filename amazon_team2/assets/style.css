@@ -76,13 +76,36 @@ table {
 }
 
 .text_box { /* make a class */
-    width: 200px;
+
+    text-box: auto;
     min-height: 100px; /* setting minium diameters can also remove min to have set diameters */
     border: 10px hidden; /* set the surrounding walls of said box in black */
-    text-align: left; /* push text to the left */
-    color: black; /* text color is black*/
-    padding: 15px;
+    text-align: center; /* push text to the left */
+    color: #ffffff; /* text color is black*/
+    padding: 30px;
     justify-content: center;
     align-items: center;
+    font-family: Arial, serif; ;
+    height: 500px;
+    width: 100%;
+    max-width: 800px; /* Adjust this value to make the whole block wider or narrower */
+    margin:0 auto;
+    font-size: 1.8rem;
 }
 
+.text_box input {
+    background: #FF9900;
+    font-size: 30px;
+}
+
+label {
+    font-size: 1.8rem;
+
+    display: block;       /* Forces the label to sit directly above the input box */
+    margin-bottom: 8px;   /* Adds breathing room below the text */
+    text-align: center;     /* Aligns the text cleanly with the input box edges */
+}
+
+.submit {
+
+}
