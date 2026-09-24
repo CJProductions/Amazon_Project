@@ -80,3 +80,8 @@ body {
         font-size: 30px;
     }
 }
+
+h2 {
+    font-size: 75px;
+    text-decoration: underline;
+}
