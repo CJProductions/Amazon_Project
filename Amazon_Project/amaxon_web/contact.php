@@ -19,5 +19,28 @@
             <a href="contact.php" class="button-link">Contact</a>
             <a href="signin.php" class="button-link">Sign In</a>
         </div>
+
+
+        <div class="text_box">
+            <form method="post" action="">
+
+                <label for="email"><strong>Email address:</strong></label><br>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br>
+
+                <br><br>
+                <label for="subject">Subject of matter:</label><br>
+                <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                <br>
+
+                <label for="message">Message:</label><br>
+                <input type="text" name="message" id="message" placeholder="Message" required>
+                <br>
+                <br><br>
+                <input type='submit' name='send' value='send' />
+            </form>
+        </div>
+
+
     </body>
 </html>

@@ -86,3 +86,115 @@ table {
     align-items: center;
 }
 
+
+
+
+body {
+    background-color: #353e51;
+    margin: 0;
+    font-family: Arial, serif;
+}
+
+#navi {
+    background-color: #232f3e;
+    padding: 1px;
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    border: 1px black solid;
+    color: white;
+}
+
+#thick_hr {
+    margin: 0;
+    border: 8px solid #FF9900;
+}
+
+#amazonava_logo {
+    display: flex;
+    justify-content: flex-end;
+    height: 76px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: 67px;
+}
+
+#cog {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(105%);
+    height: 100px;
+    padding: 0;
+}
+
+.sets {
+    margin-top: 50px;
+    margin-right: 450px;
+    margin-left: 50px;
+}
+
+#hor {
+    margin: 0;
+    border: 2px solid black;
+}
+
+#home {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(105%);
+    height: 125px;
+    padding: 0;
+    margin-top: 0;
+}
+
+#title_text {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+a:link,
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-spacing: 5em 0;
+}
+
+.text_box { /* make a class */
+
+    text-box: auto;
+    min-height: 100px; /* setting minium diameters can also remove min to have set diameters */
+    border: 10px hidden; /* set the surrounding walls of said box in black */
+    text-align: center; /* push text to the left */
+    color: #ffffff; /* text color is black*/
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, serif; ;
+    height: 500px;
+    width: 100%;
+    max-width: 800px; /* Adjust this value to make the whole block wider or narrower */
+    margin:0 auto;
+    font-size: 1.8rem;
+}
+
+.text_box input {
+    background: #FF9900;
+    font-size: 30px;
+}
+
+label {
+    font-size: 1.8rem;
+
+    display: block;       /* Forces the label to sit directly above the input box */
+    margin-bottom: 8px;   /* Adds breathing room below the text */
+    text-align: center;     /* Aligns the text cleanly with the input box edges */
+}
+
+.submit {
+
+}
