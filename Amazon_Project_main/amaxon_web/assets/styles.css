@@ -103,7 +103,7 @@ label {
     background: #18212b;
     margin: 40px;
     border-radius: 50px;
-    border:solid black 8px;
+    border:solid black 1px;
     width:60%;
     justify-self: center;
 
@@ -112,7 +112,7 @@ label {
 .labeldiv input[type=submit] {
     width: 320px;
     height: 70px;
-    border: solid black 8px;
+    border: solid black 1px;
     border-radius: 14px;
     background: #FF9900;
     font-size: 28px;
@@ -134,7 +134,7 @@ label {
     font-size: 30px;
     margin-top: 0;
     padding: 2px 20px;
-    border: solid black 5px;
+    border: solid black 1px;
     border-radius: 10px;
     background-color: white;
 }
@@ -150,30 +150,20 @@ label {
 .labeldiv select {
     font-size: 35px;
     background: white;
-    border: solid black 4px;
-    border-radius: 10px;
+    border: solid black 1px;
+    border-radius: 1px;
     padding: 0 20px;
     width:400px;
-    font-weight: bold;
+
 }
 .labeldiv select:focus {
     outline: none;
 }
 
 .labeldiv option {
-    font-weight: bold;
 }
 
-#Year {
-    font-size: 35px;
-    background: #FF9900;
-    border: solid black 35px;
-    border-radius: 50%;
-    padding: 0 20px;
-    width:200px;
-    height:200px;
-    font-weight: bold;
-}
+
 
 ::-webkit-scrollbar {
     display: none;
