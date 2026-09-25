@@ -64,7 +64,20 @@
                 aimain.insertBefore(msgBox, secondChild);
 
                 msgBox = document.createElement('div');
-                msgBox.textContent = "thinking...";
+                let randomInt = Math.floor(Math.random() * 6);
+                if (randomInt === 0) {
+                    msgBox.textContent = "thinking...";
+                } else if (randomInt === 1){
+                    msgBox.textContent = "checking database...";
+                } else if (randomInt === 2){
+                    msgBox.textContent = "AI not available right now...";
+                } else if (randomInt === 3){
+                    msgBox.textContent = "AI is having a nap...";
+                } else if (randomInt === 4){
+                    msgBox.textContent = "Having technical difficulties...";
+                } else if (randomInt === 5){
+                    msgBox.textContent = "Not working right now, mate...";
+                }
                 msgBox = stylemsg(msgBox, "right");
 
                 secondChild = aimain.firstElementChild.nextElementSibling;
