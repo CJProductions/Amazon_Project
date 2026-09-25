@@ -17,34 +17,34 @@ $_SESSION['Title'] = "Enroll";
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_POST["password"] == $_POST["c_password"]) {
-            if (onlyuser(dbconnect_insert(), $_POST["email"])) {
+            if (onlyuser(dbconnect_insert(), $_POST["student_email"])) {
                 if (reg_user(dbconnect_insert())) {
                     $_SESSION["usermessage"] = "You are successfully registered.";
-                    header("Location: login.php");
+                    header("Location: signin.php");
                     exit;
                 } else {
                     $_SESSION["usermessage"] = "There was an error registering your account.";
-                    header("Location: register.php");
+                    header("Location: enroll.php");
                     exit;
                 }
             } else {
                 $_SESSION["usermessage"] = "Email not unique.";
-                header("Location: register.php");
+                header("Location: enroll.php");
             }
         } else {
             $_SESSION["usermessage"] = "Passwords do not match.";
-            header("Location: register.php");
+            header("Location: enroll.php");
             exit;
         }
     }
 
 } catch (PDOException $e) {
     $_SESSION["usermessage"] = $e->getMessage();
-    header("Location: register.php");
+    header("Location: enroll.php");
     exit;
 } catch (Exception $e) {
     $_SESSION["usermessage"] = $e->getMessage();
-    header("Location: register.php");
+    header("Location: enroll.php");
     exit;
 }
 ?>
@@ -66,9 +66,9 @@ try {
 
 
                     <label for="Firstname"><strong>First Name</strong></label><br>
-                    <input type="text" name="Firstname" id="Firstname" placeholder="Firstname" required>
+                    <input type="text" name="f_name" id="Firstname" placeholder="Firstname" required>
                     <label for="Surname"><strong>Last Name</strong></label><br>
-                    <input type="text" name="Surname" id="Surname" placeholder="Surname" required>
+                    <input type="text" name="s_name" id="Surname" placeholder="Surname" required>
                     <label for="email"><strong>School Email</strong></label><br>
                     <input type="email" name="email" id="email" placeholder="email" required>
 

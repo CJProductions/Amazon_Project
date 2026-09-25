@@ -22,12 +22,13 @@ require_once("assets/ai.php");
 
 <form action='' method='post'>
     <br>
-    <input type='email' name='email' placeholder='School E-mail Address' required/>
+    <input type='email' name='school_email' placeholder='School E-mail Address' required/>
     <br>
-    <input type='text' name='sname' placeholder='School name' required/>
+    <input type='text' name='school_name' placeholder='School name' required/>
     <br>
-    <input type='text' name='phone' placeholder='School Phone' required/>
+    <input type='text' name='school_phone' placeholder='School Phone' required/>
     <br>
+
     <input type='submit' name='submit' value='Register' />
     <br>
 </form>
