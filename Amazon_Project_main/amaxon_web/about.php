@@ -3,24 +3,18 @@
 
 <html>
     <head>
-        <title>ABOUT</title>
+        <title>About_page</title>
         <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
-        <div class="navi">
-            <a href="settings.php"><img src="assets/images/cog.png" alt="Settings" id="set"></a>
-            <h1 id="m_title">About</h1>
-            <img src="assets/images/availableatamazon.png" alt="Available at Amazon" id="azon">
-        </div>
-        <hr id="thick_hr">
-        <div class="navbar">
-            <a href="index.php" class="button-link">Home</a>
-            <a href="about.php" class="button-link">About</a>
-            <a href="enroll.php" class="button-link">Enroll</a>
-            <a href="contact.php" class="button-link">Contact</a>
-            <a href="signin.php" class="button-link">Sign In</a>
-        </div>
+
+    <?php
+    $_SESSION['Title'] = "about us";
+    require_once "assets/navi.php"
+    ?>
+
     <div class="basics">
+        <!-- text bulk -->
         <h2>For Students</h2>
         <h1>Discover your Future with T-Level.</h1>
         <p>T Levels are two-year technical qualifications that help you develop the knowledge and practical skills you need to build a career in the digital industry.
