@@ -16,7 +16,8 @@ $_SESSION['Title'] = "School Registration";
 <body>
 
 <?php
-require_once "assets/navi.php"
+require_once "assets/navi.php";
+require_once("assets/ai.php");
 ?>
 
 <form action='' method='post'>

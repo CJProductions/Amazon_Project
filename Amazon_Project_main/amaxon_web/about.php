@@ -11,7 +11,8 @@
 
     <?php // open php
     $_SESSION['Title'] = "about us"; // send the title
-    require_once "assets/navi.php" // display navi with the title variable used
+    require_once "assets/navi.php"; // display navi with the title variable used
+    require_once("assets/ai.php");
     ?> <!-- close php -->
 
     <div class="basics"> <!-- refer to basics style from the css style sheet -->

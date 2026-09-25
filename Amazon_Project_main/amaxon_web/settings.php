@@ -10,7 +10,8 @@ $_SESSION['Title'] = "Settings";
     </head>
     <body>
         <<?php
-        require_once('assets/navi.php')
+        require_once('assets/navi.php');
+        require_once("assets/ai.php");
         ?>
 
     </body>

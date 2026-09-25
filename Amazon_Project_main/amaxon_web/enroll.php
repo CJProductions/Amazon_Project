@@ -57,7 +57,8 @@ try {
     </head>
     <body>
     <?php
-    require_once('assets/navi.php')
+    require_once('assets/navi.php');
+    require_once("assets/ai.php");
     ?>
 
             <form method="post" action="">

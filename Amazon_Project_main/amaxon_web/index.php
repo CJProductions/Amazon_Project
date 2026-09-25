@@ -10,7 +10,8 @@ $_SESSION['Title'] = "Home Page";
     </head>
     <body> <!-- The body of the html, contains a navigation bar, as well as buttons to other websites, a banner image and information. -->
     <?php
-    require_once('assets/navi.php')
+    require_once('assets/navi.php');
+    require_once("assets/ai.php");
     ?>
         <div> <!-- The division for the image banner on the home page. -->
             <img src="assets/images/amazon_tlevel.png" alt="Amazon T-Level" id="imgbanner">

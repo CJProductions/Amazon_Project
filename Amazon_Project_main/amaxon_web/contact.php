@@ -12,7 +12,8 @@ $_SESSION['Title'] = "Contact";
     <body>
 
     <?php
-    require_once('assets/navi.php')
+    require_once('assets/navi.php');
+    require_once("assets/ai.php");
     ?>
 
         <div class="labeldiv">
