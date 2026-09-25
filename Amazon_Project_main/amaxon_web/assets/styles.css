@@ -231,12 +231,19 @@ label {
 
 .watermark {
     position: fixed;
-    background: #00000055;
     width: auto;
     justify-self: center;
 }
 
 .watermark h1 {
     font-size: 101px;
-    color: #FF9900;
+    color: #FF990033;
+}
+
+#Year {
+    width: 200px;
+    height: 200px;
+    border: 35px solid black;
+    border-radius: 50%;
+    background: #FF9900;
 }
