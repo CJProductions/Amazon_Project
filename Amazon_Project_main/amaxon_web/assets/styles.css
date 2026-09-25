@@ -238,3 +238,15 @@ label {
     flex-direction: column-reverse;
     overflow-y: auto;
 }
+
+.watermark {
+    position: fixed;
+    background: #00000055;
+    width: auto;
+    justify-self: center;
+}
+
+.watermark h1 {
+    font-size: 100px;
+    color: #FF9900;
+}

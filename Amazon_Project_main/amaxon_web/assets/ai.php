@@ -1,3 +1,7 @@
+<div class="watermark">
+    <h1>@sonny</h1>
+</div>
+
 <!-- chat box -->
 <div class="ai">
     <!-- chat bot title -->
@@ -29,6 +33,7 @@
         }
         return msg;
     }
+
 
     let open = false;
 
