@@ -124,6 +124,7 @@ label {
 .labeldiv label {
     margin: 20px 0;
     margin-bottom: 5px;
+    color: #FF9900;
 }
 
 .labeldiv input[type=text],
@@ -135,7 +136,7 @@ label {
     padding: 2px 20px;
     border: solid black 5px;
     border-radius: 10px;
-    background-color: #FF9900;
+    background-color: white;
 }
 .labeldiv input::placeholder{
     color:black;
@@ -148,7 +149,7 @@ label {
 
 .labeldiv select {
     font-size: 35px;
-    background: #FF9900;
+    background: white;
     border: solid black 4px;
     border-radius: 10px;
     padding: 0 20px;

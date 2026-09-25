@@ -22,7 +22,7 @@ $_SESSION['Title'] = "Contact";
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <br>
 
-                <label for="subject">Subject of matter:</label><br>
+                <label for="subject">Subject:</label><br>
                 <input type="text" name="subject" id="subject" placeholder="Subject" required>
                 <br>
 

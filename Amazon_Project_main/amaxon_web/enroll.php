@@ -87,7 +87,7 @@ try {
                     </select>
 
 
-                    <label for="Year">Year Group</label>
+                    <label for="Year"><strong>Year Group</strong></label>
                     <select id="Year">
                         <option>12</option>
                         <option>13</option>
