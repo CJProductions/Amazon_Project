@@ -1,28 +1,4 @@
-<?php
-# SCHOOL REG
-session_start();
-require_once "assets/common.php";  // bring in the common functions
-require_once "assets/dbconn.php";  // bring in the dbconnection, not ideal way to execute
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
-
-    try {  //
-        if (reg_school(dbconnect_insert())) {  // ensures they are the only user and then registers them
-            $_SESSION["usermessage"] = "school registration successful";
-            header("Location: index.php");  // redirects them to login page
-            exit;  // ensures no other code in executed
-        }
-    } catch (PDOException $e) {  // catch database error
-        $_SESSION["usermessage"] = $e->getMessage();
-        header("Location: index.php");
-        exit;
-    } catch (Exception $e) {
-        $_SESSION["usermessage"] = $e->getMessage();
-        header("Location: index.php");
-        exit;
-    }
-}
-?>
 
 
 <!DOCTYPE html>

@@ -1,4 +1,50 @@
-<!DOCTYPE html> <!-- States this part of the document as a HTML file. -->
+
+<?php
+session_start(); # server side storage session lasts like 5 mins
+require_once "assets/common.php";  // bring in the common functions
+require_once "assets/dbconn.php";  // bring in the dbconnection, not ideal way to execute
+
+#check if post
+
+#check password match
+
+#check if only user
+
+# register user
+try {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_POST["password"] == $_POST["c_password"]) {
+            if (onlyuser(dbconnect_insert(), $_POST["email"])) {
+                if (reg_user(dbconnect_insert())) {
+                    $_SESSION["usermessage"] = "You are successfully registered.";
+                    header("Location: login.php");
+                    exit;
+                } else {
+                    $_SESSION["usermessage"] = "There was an error registering your account.";
+                    header("Location: register.php");
+                    exit;
+                }
+            } else {
+                $_SESSION["usermessage"] = "Email not unique.";
+                header("Location: register.php");
+            }
+        } else {
+            $_SESSION["usermessage"] = "Passwords do not match.";
+            header("Location: register.php");
+            exit;
+        }
+    }
+
+} catch (PDOException $e) {
+    $_SESSION["usermessage"] = $e->getMessage();
+    header("Location: register.php");
+    exit;
+} catch (Exception $e) {
+    $_SESSION["usermessage"] = $e->getMessage();
+    header("Location: register.php");
+    exit;
+}
+?>
 
 <html>
     <head>
