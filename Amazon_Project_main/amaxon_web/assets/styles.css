@@ -86,6 +86,57 @@ h2 {
     text-decoration: underline;
 }
 
+label {
+    font-size: 1.8rem;
+
+    display: block; /* Forces the label to sit directly above the input box */
+    margin-bottom: 8px; /* Adds breathing room below the text */
+    text-align: center;
+    align-content: center;
+
+}
 
 
 
+.labeldiv {
+    text-align: center;
+    background: #18212b;
+    margin: 40px;
+    border-radius: 50px;
+    border:solid black 8px;
+    width:60%;
+    justify-self: center;
+
+}
+
+.labeldiv input[type=submit] {
+    width: 320px;
+    height: 70px;
+    border: solid black 8px;
+    border-radius: 14px;
+    background: #FF9900;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial,sans-serif;
+    margin: 40px 0;
+}
+
+.labeldiv label {
+    margin: 20px 0;
+    margin-bottom: 5px;
+}
+
+.labeldiv input[type=text],
+.labeldiv input[type=password],
+.labeldiv input[type=email] {
+    margin: 20px 0;
+    font-size: 30px;
+    margin-top: 0;
+    padding: 2px 20px;
+    border: solid black 5px;
+    border-radius: 10px;
+    background-color: #FF9900;
+}
+.labeldiv input::placeholder{
+    color:black;
+}

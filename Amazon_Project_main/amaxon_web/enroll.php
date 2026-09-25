@@ -59,42 +59,31 @@ try {
     require_once('assets/navi.php')
     ?>
 
-        <div class="text_box">
             <form method="post" action="">
-                <div class="label">
+                <div class="labeldiv">
 
 
-                    <label for="text"><strong>firstname:</strong></label><br>
+                    <label for="Firstname"><strong>First Name</strong></label><br>
                     <input type="text" name="Firstname" id="Firstname" placeholder="Firstname" required>
-                    <br><br>
-                    <label for="text"><strong>Surname:</strong></label><br>
+                    <label for="Surname"><strong>Last Name</strong></label><br>
                     <input type="text" name="Surname" id="Surname" placeholder="Surname" required>
-                    <br><br>
-                    <label for="email"><strong>School email:</strong></label><br>
+                    <label for="email"><strong>School Email</strong></label><br>
                     <input type="email" name="email" id="email" placeholder="email" required>
-                    <br><br>
-                    <label for="text"><strong>School:</strong></label><br>
+                    <label for="School"><strong>School</strong></label><br>
                     <input type="text" name="School" id="School" placeholder="School" required>
-                    <br><br>
-                    <label for="text"><strong>Pathway:</strong></label><br>
+                    <label for="Pathway"><strong>Pathway</strong></label><br>
                     <input type="text" name="pathway" id="Pathway" placeholder="pathway" required>
-                    <br><br>
-                    <label for="text"><strong>Year group:</strong></label><br>
-                    <input type="text" name="year group" id="Year group" placeholder="Year group" required>
-                    <br><br>
-                    <hr>
-                    <label for="password"><strong>Password</strong>:</label><br>
-                    <input type="password" name="Password_c" id="Password" placeholder="Password" required>
-                    <br><br>
-                    <label for="password"><strong>Password Confirmation</strong>:</label><br>
-                    <input type="password" name="Password" id="Password" placeholder="Password confirm" required>
-                    <br><br>
-
-                </div>
-
-
-                <div class=submit>
+                    <label for="Year Group"><strong>Year Group</strong></label><br>
+                    <input type="text" name="Year Group" id="Year Group" placeholder="Year group" required>
+                    <label for="Password"><strong>Password</strong>:</label><br>
+                    <input type="password" name="password" id="Password" placeholder="Password" required>
+                    <label for="cPassword"><strong>Password Confirmation</strong>:</label><br>
+                    <input type="password" name="cPassword" id="cPassword" placeholder="Password confirm" required>
+                    <br>
                     <input type='submit' name='login' value='login' />
                 </div>
+
+
+
     </body>
 </html>
