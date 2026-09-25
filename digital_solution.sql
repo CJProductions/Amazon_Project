@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 23, 2026 at 03:39 PM
+-- Generation Time: Sep 25, 2026 at 12:17 PM
 -- Server version: 8.4.3
--- PHP Version: 8.3.26
+-- PHP Version: 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -79,7 +79,7 @@ CREATE TABLE `t_level_student` (
   `password` text NOT NULL,
   `year_group` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `pathway` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `school_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `school_id` int NOT NULL,
   `amazon_id` int NOT NULL,
   `career_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -116,7 +116,8 @@ ALTER TABLE `t_level_student`
   ADD PRIMARY KEY (`student_id`),
   ADD UNIQUE KEY `amazon_id` (`amazon_id`),
   ADD UNIQUE KEY `school_id` (`amazon_id`),
-  ADD KEY `career_id` (`career_id`);
+  ADD KEY `career_id` (`career_id`),
+  ADD KEY `amazon_id_2` (`amazon_id`,`career_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -145,6 +146,29 @@ ALTER TABLE `school`
 --
 ALTER TABLE `t_level_student`
   MODIFY `student_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `career_adviser`
+--
+ALTER TABLE `career_adviser`
+  ADD CONSTRAINT `career_adviser_ibfk_1` FOREIGN KEY (`amazon_id`) REFERENCES `amazon_talent_team` (`amazon_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `career_adviser_ibfk_2` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `school`
+--
+ALTER TABLE `school`
+  ADD CONSTRAINT `school_ibfk_1` FOREIGN KEY (`amazon_id`) REFERENCES `amazon_talent_team` (`amazon_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `t_level_student`
+--
+ALTER TABLE `t_level_student`
+  ADD CONSTRAINT `t_level_student_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `career_adviser` (`career_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
