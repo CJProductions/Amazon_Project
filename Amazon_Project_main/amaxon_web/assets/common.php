@@ -75,7 +75,7 @@ function getuserid($conn, $email){
 function reg_school($conn){
 
     // Prepare and execute the SQL query
-    $sql = "INSERT INTO school (school_name, school_email, school_phone) VALUES (?, ?, ?)";  //prepare the sql to be sent
+    $sql = "INSERT INTO school (amazon_id, school_name, school_email, school_phone) VALUES (?, ?, ?)";  //prepare the sql to be sent
 
     $stmt = $conn->prepare($sql); //prepare to sql
 
@@ -93,6 +93,19 @@ function school_getter($conn){
     // function to get all the schools for a drop down
 
     $sql = "SELECT school_id, school_name FROM school";
+    //get all schools in system
+    $stmt = $conn->prepare($sql);
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $conn = null;
+    return $result;
+}
+
+function amazon_getter($conn){
+    // function to get all the Amazon staff for a drop down
+
+    $sql = "SELECT amazon_id, username FROM amazon_talent_team";
     //get all schools in system
     $stmt = $conn->prepare($sql);
 

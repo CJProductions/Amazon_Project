@@ -1,5 +1,5 @@
 
-<!DOCTYPE html> <!-- States this part of the document as a HTML file. -->
+<!DOCTYPE html> <!-- States this part of the document as an HTML file. -->
 
 <html lang="">
     <head>
@@ -10,7 +10,7 @@
     <body>
 
     <?php // open php
-    $_SESSION['Title'] = "about us"; // send the title
+    $_SESSION['Title'] = "About us"; // send the title
     require_once "assets/navi.php"; // display navi with the title variable used
     require_once("assets/ai.php");
     ?> <!-- close php -->
@@ -23,7 +23,7 @@
             <p>T Levels are two-year technical qualifications that help you develop the knowledge and practical skills you need to build a career in the digital industry.
                 You will blend classroom learning with industry experience, with the chance to explore areas such as software development, cybersecurity, networking, data and digital production.
                 Supported by companies like Amazon, you can learn more about how digital skills are used in real workplaces and start gaining experience for your future career.
-            </p>`
+            </p>
 
             <h1>Build Career Skills</h1>
             <p>A Digital T Level can help you develop more than just technical knowledge.

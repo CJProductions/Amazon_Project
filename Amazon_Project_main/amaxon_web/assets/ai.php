@@ -1,6 +1,4 @@
-<div class="watermark">
-    <h1>@sonny</h1>
-</div>
+
 
 <!-- chat box -->
 <div class="ai">

@@ -233,6 +233,7 @@ label {
     position: fixed;
     width: auto;
     justify-self: center;
+    pointer-events: none;
 }
 
 .watermark h1 {
@@ -240,10 +241,3 @@ label {
     color: #FF990033;
 }
 
-#Year {
-    width: 200px;
-    height: 200px;
-    border: 35px solid black;
-    border-radius: 50%;
-    background: #FF9900;
-}

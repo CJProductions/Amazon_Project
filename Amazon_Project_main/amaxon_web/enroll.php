@@ -70,21 +70,42 @@ try {
                     <label for="Surname"><strong>Last Name</strong></label><br>
                     <input type="text" name="s_name" id="Surname" placeholder="Surname" required>
                     <label for="email"><strong>School Email</strong></label><br>
-                    <input type="email" name="email" id="email" placeholder="email" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required><br>
+                    <label for="school">School</label>
+                    <br>
+                    <?php
+
+                    try {
+                        $schools = school_getter(dbconnect_insert());
+                        echo '<select name="school_id" id="school_id">' . "\n";
+
+                        echo '    <option value="">-- Please select a school --</option>' . "\n";
+
+                        foreach ($schools as $school) {
 
 
-                    <label for="School"><strong>School</strong></label><br>
-                    <select id="School">
-                        <option>UTC Leeds</option>
-                        <option>UTC Leigh</option>
-                        <option>UTC Leo</option>
-                    </select>
+                            echo ' <option value="' . $school["school_id"] . '">' . $school["school_name"] . '</option>' . "\n";
+                        }
 
+                        echo '</select>';
+
+
+                    } catch (PDOException $e) {
+                        echo $e->getMessage();
+                        exit;
+                    } catch (Exception $e) {
+                        echo $e->getMessage();
+                        exit;
+                    }
+                    ?>
 
                     <label for="Pathway"><strong>Pathway</strong></label><br>
                     <select id="Pathway">
                         <option>Digital</option>
-                        <option>Health and Social</option>
+                        <option>Business</option>
+                        <option>Finance</option>
+                        <option>Media</option>
+                        <option>Engineering</option>
                     </select>
 
 
