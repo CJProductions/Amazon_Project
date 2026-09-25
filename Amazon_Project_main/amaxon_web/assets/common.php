@@ -12,7 +12,7 @@ function user_message(){
 
 # only user
 function onlyuser($conn, $email){ // at registration check to make sure there none of the same
-    $sql = "SELECT email FROM student WHERE email = ?"; // check if the inputted email is already in the emails
+    $sql = "SELECT email FROM t_level_student WHERE email = ?"; // check if the inputted email is already in the emails
     $stmt = $conn->prepare($sql); // prepare sql
     $stmt->bindParam(1, $email);
     $stmt->execute(); //run sql
@@ -28,17 +28,17 @@ function onlyuser($conn, $email){ // at registration check to make sure there no
 # user reg
 function reg_user($conn){
     // prepare sql
-    $sql = "INSERT INTO student (school_id, fname, sname, email, password, pathway, year) VALUES(?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO t_level_student (school_id, f_name, s_name, student_email, password, pathway, year_group) VALUES(?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
 
     // list and bind all paramiters for security
     $stmt->bindParam(1, $_POST["school_id"]);
-    $stmt->bindParam(2, $_POST["fname"]);
-    $stmt->bindParam(3, $_POST["sname"]);
-    $stmt->bindParam(4, $_POST["email"]);
+    $stmt->bindParam(2, $_POST["f_name"]);
+    $stmt->bindParam(3, $_POST["s_name"]);
+    $stmt->bindParam(4, $_POST["student_email"]);
     $stmt->bindParam(5, password_hash($_POST["password"], PASSWORD_DEFAULT)); // use a hashing algorithm to encrypt the password
     $stmt->bindParam(6, $_POST["pathway"]);
-    $stmt->bindParam(7, $_POST["year"]);
+    $stmt->bindParam(7, $_POST["year_group"]);
 
 
     $stmt->execute(); // run the query
@@ -48,7 +48,7 @@ function reg_user($conn){
 
 # user login
 function login($conn, $email){
-    $sql = "SELECT student_id, password FROM student WHERE email = ?";
+    $sql = "SELECT student_id, password FROM t_level_student WHERE student_email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $email);
     $stmt->execute();
@@ -64,7 +64,7 @@ function login($conn, $email){
 
 #get user id
 function getuserid($conn, $email){
-    $sql = "SELECT student_id FROM student WHERE email = ?"; // get only one student_id since there's unique emails (meaning only one can exist)
+    $sql = "SELECT student_id FROM t_level_student WHERE student_email = ?"; // get only one student_id since there's unique emails (meaning only one can exist)
     $stmt = $conn->prepare($sql); // prepare
     $stmt->bind_param(1, $email); // bind the param for security
     $stmt->execute(); // run sql
@@ -79,9 +79,9 @@ function reg_school($conn){
 
     $stmt = $conn->prepare($sql); //prepare to sql
 
-    $stmt->bindParam(1, $_POST['sname']);  //bind parameters for security
-    $stmt->bindParam(2, $_POST['email']);
-    $stmt->bindParam(3, $_POST['phone']);
+    $stmt->bindParam(1, $_POST['school_name']);  //bind parameters for security
+    $stmt->bindParam(2, $_POST['school_email']);
+    $stmt->bindParam(3, $_POST['school_phone']);
 
 
     $stmt->execute();  //run the query to insert
