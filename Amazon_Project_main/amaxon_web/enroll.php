@@ -49,9 +49,10 @@ try {
 }
 ?>
 
-<html>
+<html lang="en">
+
     <head>
-        <title>ENROLL</title>
+        <title>Enroll</title>
         <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
