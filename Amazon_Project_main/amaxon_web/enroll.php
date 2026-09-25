@@ -70,12 +70,30 @@ try {
                     <input type="text" name="Surname" id="Surname" placeholder="Surname" required>
                     <label for="email"><strong>School Email</strong></label><br>
                     <input type="email" name="email" id="email" placeholder="email" required>
+
+
                     <label for="School"><strong>School</strong></label><br>
-                    <input type="text" name="School" id="School" placeholder="School" required>
+                    <select id="School">
+                        <option>UTC Leeds</option>
+                        <option>UTC Leigh</option>
+                        <option>UTC Leo</option>
+                    </select>
+
+
                     <label for="Pathway"><strong>Pathway</strong></label><br>
-                    <input type="text" name="pathway" id="Pathway" placeholder="pathway" required>
-                    <label for="Year Group"><strong>Year Group</strong></label><br>
-                    <input type="text" name="Year Group" id="Year Group" placeholder="Year group" required>
+                    <select id="Pathway">
+                        <option>Digital</option>
+                        <option>Health and Social</option>
+                    </select>
+
+
+                    <label for="Year">Year Group</label>
+                    <select id="Year">
+                        <option>12</option>
+                        <option>13</option>
+                    </select>
+
+
                     <label for="Password"><strong>Password</strong>:</label><br>
                     <input type="password" name="password" id="Password" placeholder="Password" required>
                     <label for="cPassword"><strong>Password Confirmation</strong>:</label><br>
