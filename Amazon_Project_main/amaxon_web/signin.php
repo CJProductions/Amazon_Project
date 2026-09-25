@@ -12,7 +12,7 @@ try {
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(!isset($_SESSION["student_id"])) {
             $_SESSION["usermessage"] = "You are already logged in.";
-            header("Location: login.php");
+            header("Location: signin.php");
             exit;
         } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usr = login(dbconnect_insert(), $_POST["email"]);
@@ -24,21 +24,21 @@ try {
                 exit;
             } elseif (!$usr) {
                 $_SESSION["usermessage"] = "invalid email or password.";
-                header("Location: login.php");
+                header("Location: signin.php");
             } else{
                 $_SESSION["usermessage"] = "something went wrong.";
-                header("Location: login.php");
+                header("Location: signin.php");
                 exit;
             }
         }
     }
 } catch (PDOException $e) {
     $_SESSION['usermessage'] = $e->getMessage();
-    header("Location: login.php");
+    header("Location: signin.php");
     exit;
 } catch (Exception $e) {
     $_SESSION['usermessage'] = $e->getMessage();
-    header("Location: login.php");
+    header("Location: sigin.php");
     exit;
 }
 ?>
