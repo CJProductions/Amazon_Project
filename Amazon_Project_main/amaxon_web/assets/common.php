@@ -114,3 +114,10 @@ function amazon_getter($conn){
     $conn = null;
     return $result;
 }
+
+function data_sans($_POST){
+   if (is_string($_POST)) {
+       return trim(strip_tags($_POST)); // trims down the data i don't know if its sanitized well
+   }
+   return $_POST;
+}
