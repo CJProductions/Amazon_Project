@@ -22,8 +22,8 @@ $_SESSION['Title'] = "Home";
         <div class="basics"> <!-- The information on the home page. -->
 
             <div class="label_div">
-                <h1>T-Level Digital Support</h1>
-                <p>Amazon can offer useful support for students on Digital T Levels in developing practical skills relevant to the industry.
+                <h1>T-Level Digital Support</h1>                <p>Amazon can offer useful support for students on Digital T Levels in developing practical skills relevant to the industry.
+
                     Students are able to learn more about cloud computing, software development, cybersecurity, and data management by having access to technology, online tools, and learning resources.
                     Such support can help to close the gap between classroom learning and skills demanded in the digital workplace.</p>
             </div>
@@ -31,7 +31,11 @@ $_SESSION['Title'] = "Home";
             <div class="label_div">
                 <h1>Experience in the Industry and Opportunities.</h1>
                 <p>Working or learning with a company like Amazon can also give Digital T Level students insight into how technology is used in a large organization.
-                    Employers can lead projects, talks, mentoring, work placements and opportunities to learn about different digital careers that students are able to benefit from.
+                    Employers can lea
+
+
+
+                    d projects, talks, mentoring, work placements and opportunities to learn about different digital careers that students are able to benefit from.
                     The experience can help students build confidence, develop professional skills and see how the knowledge gained during their T Level can be applied in a real working environment.</p>
             </div>
 
