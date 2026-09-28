@@ -21,7 +21,9 @@ require_once("assets/ai.php");
 require_once "assets/common.php";
 require_once "assets/dbconn.php";
 ?>
+
 <?php
+/**
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_POST["password"] == $_POST["c_password"]) {
@@ -55,6 +57,7 @@ $_SESSION["usermessage"] = $e->getMessage();
 header("Location: enroll.php");
 exit;
 }
+*/
 ?>
 
 <form action='' method='post'>
@@ -91,7 +94,7 @@ exit;
     }
     ?>
 
-    <input type='submit' name='submit' value='Register' />
+    <input type='submit' name='submit' value='Register'/>
     <br>
 </form>
 
