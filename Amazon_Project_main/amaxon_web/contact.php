@@ -1,10 +1,12 @@
 <!DOCTYPE html> <!-- States this part of the document as A HTML file. -->
+
 <?php // start php
 session_start(); // basic syntax for session variables
 $_SESSION['Title'] = "Contact"; // link to Title variable and make is contact
 ?> <!-- close php-->
 
 <html lang=""> <!-- start html -->
+
     <head>
         <title>Contact</title>
         <link rel="stylesheet" href="assets/styles.css"> <!-- refer to style.css to make everything stylised -->
