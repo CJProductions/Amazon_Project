@@ -9,10 +9,9 @@ $_SESSION['Title'] = "Settings";
         <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
-        <<?php
+        <?php
         require_once('assets/navi.php');
         require_once("assets/ai.php");
         ?>
-
     </body>
 </html>
