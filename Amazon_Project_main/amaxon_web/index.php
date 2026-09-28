@@ -1,7 +1,7 @@
 <!DOCTYPE html> <!-- States this part of the document as a HTML file. -->
 <?php
 session_start();
-$_SESSION['Title'] = "Home Page";
+$_SESSION['Title'] = "Home";
 ?>
 <html> <!-- The start of the HTML page. -->
     <head> <!-- The head of the page, usually has the title, which is the tab's name as well as the link to the stylesheet to decorate the website. -->

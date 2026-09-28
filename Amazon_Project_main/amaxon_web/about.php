@@ -3,7 +3,7 @@
 
 <html lang="">
     <head>
-        <title>About_page</title>
+        <title>About</title>
         <link rel="stylesheet" href="assets/styles.css"> <!-- refer to the style sheet in assets -->
     </head>
 
