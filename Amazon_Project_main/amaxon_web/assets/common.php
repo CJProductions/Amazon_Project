@@ -115,9 +115,9 @@ function amazon_getter($conn){
     return $result;
 }
 
-function data_sans($_POST){
-   if (is_string($_POST)) {
-       return trim(strip_tags($_POST)); // trims down the data i don't know if its sanitized well
-   }
-   return $_POST;
+function data_sans($conn){ //im stupid ima just ask sir tomorrow
+    $sql = ('update student set name = ?');
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam();
+    $stmt->execute();
 }
