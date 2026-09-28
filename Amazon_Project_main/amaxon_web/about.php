@@ -16,7 +16,7 @@
     ?> <!-- close php -->
 
     <div class="basics"> <!-- refer to basics style from the css style sheet -->
-        <div class="labeldiv">
+        <div class="label_div">
             <!-- text bulk -->
             <h2>For Students</h2>
             <h1>Discover your Future with T-Level.</h1>
@@ -32,7 +32,7 @@
             <br>
         </div>
 
-        <div class="labeldiv">
+        <div class="label_div">
             <h2>For Career Advisors</h2>
             <h1>Supporting Students into Digital Careers</h1>
             <p>T Levels provide students with a technical education that combines classroom-based learning with meaningful industry experience.

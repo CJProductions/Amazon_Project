@@ -44,34 +44,32 @@ try {
 ?>
 
 
-<html>
+<html lang="">
     <head>
         <title>SIGN IN</title>
         <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
+
     <?php
     require_once('assets/navi.php');
     require_once("assets/ai.php");
     ?>
 
-            <form method="post" action="">
-                <div class="labeldiv">
-
+            <form method="post" action=""> <!-- make a form for users to input information-->
+                <div class="label_div">
 
                     <label for="email"><strong>Email address:</strong></label><br>
                     <input type="email" name="email" id="email" placeholder="Email" required>
                     <br>
 
-                    <label for="password"><strong>Password</strong>:</label><br>
+                    <label for="password"><strong>Password:</strong>:</label><br>
                     <input type="password" name="Password" id="Password" placeholder="Password" required>
                     <br>
 
                     <input type='submit' name='login' value='login' />
+
                 </div>
-
-
-
 
             </form>
 

@@ -62,7 +62,7 @@ try {
     ?>
 
             <form method="post" action="">
-                <div class="labeldiv">
+                <div class="label_div">
 
 
                     <label for="Firstname"><strong>First Name</strong></label><br>

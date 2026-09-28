@@ -98,7 +98,7 @@ label {
 
 
 
-.labeldiv {
+.label_div {
     text-align: center;
     background: #18212b;
     margin: 40px;
@@ -109,7 +109,7 @@ label {
 
 }
 
-.labeldiv input[type=submit] {
+.label_div input[type=submit] {
     width: 320px;
     height: 70px;
     border: solid black 1px;
@@ -121,15 +121,15 @@ label {
     margin: 40px 0;
 }
 
-.labeldiv label {
+.label_div label {
     margin: 20px 0;
     margin-bottom: 5px;
     color: #FF9900;
 }
 
-.labeldiv input[type=text],
-.labeldiv input[type=password],
-.labeldiv input[type=email] {
+.label_div input[type=text],
+.label_div input[type=password],
+.label_div input[type=email] {
     margin: 20px 0;
     font-size: 30px;
     margin-top: 0;
@@ -138,16 +138,16 @@ label {
     border-radius: 10px;
     background-color: white;
 }
-.labeldiv input::placeholder{
+.label_div input::placeholder{
     color:black;
 }
 
-.labeldiv input:focus{
+.label_div input:focus{
     outline: none;
 }
 
 
-.labeldiv select {
+.label_div select {
     font-size: 35px;
     background: white;
     border: solid black 1px;
@@ -156,11 +156,11 @@ label {
     width:400px;
 
 }
-.labeldiv select:focus {
+.label_div select:focus {
     outline: none;
 }
 
-.labeldiv option {
+.label_div option {
 }
 
 

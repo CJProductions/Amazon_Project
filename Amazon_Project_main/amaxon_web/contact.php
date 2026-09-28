@@ -16,7 +16,7 @@ $_SESSION['Title'] = "Contact";
     require_once("assets/ai.php");
     ?>
 
-        <div class="labeldiv">
+        <div class="label_div">
             <form method="post" action="">
 
                 <label for="email"><strong>Email address:</strong></label><br>
