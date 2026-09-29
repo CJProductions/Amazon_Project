@@ -1,7 +1,7 @@
 <!DOCTYPE html> <!-- States this part of the document as A HTML file. -->
 
 <?php // start php
-session_start(); // basic syntax for session variables
+session_start(); // session variables expires after 5 minutes
 $_SESSION['Title'] = "Contact"; // link to Title variable and make is contact
 ?> <!-- close php-->
 

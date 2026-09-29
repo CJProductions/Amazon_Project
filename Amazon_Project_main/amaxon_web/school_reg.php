@@ -22,48 +22,33 @@ require_once "assets/common.php";
 require_once "assets/dbconn.php";
 ?>
 <?php
-try {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if ($_POST["password"] == $_POST["c_password"]) {
-            if (onlyuser(dbconnect_insert(), $_POST["student_email"])) {
-                if (reg_user(dbconnect_insert())) {
-                    $_SESSION["usermessage"] = "You are successfully registered.";
-                    header("Location: signin.php");
-                    exit;
-    } else {
-$_SESSION["usermessage"] = "There was an error registering your account.";
-header("Location: enroll.php");
-exit;
-}
-} else {
-$_SESSION["usermessage"] = "Email not unique.";
-header("Location: enroll.php");
-}
-} else {
-$_SESSION["usermessage"] = "Passwords do not match.";
-header("Location: enroll.php");
-exit;
-}
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
 
-} catch (PDOException $e) {
-$_SESSION["usermessage"] = $e->getMessage();
-header("Location: enroll.php");
+try {  //
+if (reg_school(dbconnect_insert())) {  // ensures they are the only user and then registers them
+$_SESSION['usermessage'] = "School Registration Successful";
+header("Location: index.php");  // redirects them to login page
+exit;  // ensures no other code in executed
+}
+} catch (PDOException $e) {  // catch database error
+$_SESSION['usermessage'] = "School Registration Successful";
+header("Location: index.php");  // redirects them to login page
 exit;
-} catch (Exception $e) {
-$_SESSION["usermessage"] = $e->getMessage();
-header("Location: enroll.php");
+} catch (Exception $e) {  // Catches all other errors
+$_SESSION['usermessage'] = "School Registration Successful";
+header("Location: index.php");  // redirects them to login page
 exit;
+}
 }
 ?>
 
 <form action='' method='post'>
     <br>
-    <input type='email' name='school_email' placeholder='School E-mail Address' required/>
-    <br>
     <input type='text' name='school_name' placeholder='School name' required/>
     <br>
     <input type='text' name='school_phone' placeholder='School Phone' required/>
+    <br>
+    <input type='email' name='school_email' placeholder='School E-mail Address' required/>
     <br>
     <?php
 

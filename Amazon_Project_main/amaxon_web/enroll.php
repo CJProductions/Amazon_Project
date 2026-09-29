@@ -16,7 +16,7 @@ $_SESSION['Title'] = "Enroll";
 # register user
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if ($_POST["password"] == $_POST["c_password"]) {
+        if ($_POST["password"] == $_POST["cPassword"]) {
             if (onlyuser(dbconnect_insert(), $_POST["student_email"])) {
                 if (reg_user(dbconnect_insert())) {
                     $_SESSION["usermessage"] = "You are successfully registered.";
@@ -70,7 +70,7 @@ try {
                     <label for="Surname"><strong>Last Name</strong></label><br>
                     <input type="text" name="s_name" id="Surname" placeholder="Surname" required>
                     <label for="email"><strong>School Email</strong></label><br>
-                    <input type="email" name="email" id="email" placeholder="Email" required><br>
+                    <input type="email" name="student_email" id="email" placeholder="Email" required><br>
                     <label for="school">School</label>
                     <br>
                     <?php
@@ -79,7 +79,7 @@ try {
                         $schools = school_getter(dbconnect_insert());
                         echo '<select name="school_id" id="school_id">' . "\n";
 
-                        echo '    <option value="">-- Please select a school --</option>' . "\n";
+                        echo '    <option value="">Please select a school</option>' . "\n";
 
                         foreach ($schools as $school) {
 
@@ -100,7 +100,7 @@ try {
                     ?>
 
                     <label for="Pathway"><strong>Pathway</strong></label><br>
-                    <select id="Pathway">
+                    <select name="pathway" id="Pathway">
                         <option>Digital</option>
                         <option>Business</option>
                         <option>Finance</option>
@@ -110,7 +110,7 @@ try {
 
 
                     <label for="Year"><strong>Year Group</strong></label>
-                    <select id="Year">
+                    <select name="year_group" id="Year">
                         <option>12</option>
                         <option>13</option>
                     </select>
@@ -120,6 +120,62 @@ try {
                     <input type="password" name="password" id="Password" placeholder="Password" required>
                     <label for="cPassword"><strong>Password Confirmation</strong>:</label><br>
                     <input type="password" name="cPassword" id="cPassword" placeholder="Password confirm" required>
+                    <br>
+                    <label for="amazon_id">Amazon Mentor</label>
+                    <?php
+
+                    try {
+                        $amazons = amazon_getter(dbconnect_insert());
+                        echo '<select name="amazon_id" id="amazon_id">' . "\n";
+
+                        echo '    <option value="">-- Please select an Amazon staff member --</option>' . "\n";
+
+                        foreach ($amazons as $amazon) {
+
+
+                            echo ' <option value="' . $amazon["amazon_id"] . '">' . $amazon["username"] . '</option>' . "\n";
+                        }
+
+                        echo '</select>';
+
+
+
+                    } catch (PDOException $e) {
+                        echo $e->getMessage();
+                        exit;
+                    } catch (Exception $e) {
+                        echo $e->getMessage();
+                        exit;
+                    }
+                    ?>
+                    <br>
+                    <label for="career_id">School staff</label>
+                    <?php
+
+                    try {
+                        $amazons = career_getter(dbconnect_insert());
+                        echo '<select name="career_id" id="career_id">' . "\n";
+
+                        echo '    <option value="">-- Please select a staff member from your school--</option>' . "\n";
+
+                        foreach ($amazons as $amazon) {
+
+
+                            echo ' <option value="' . $amazon["career_id"] . '">' . $amazon["f_name"] . '</option>' . "\n";
+                        }
+
+                        echo '</select>';
+
+
+
+                    } catch (PDOException $e) {
+                        echo $e->getMessage();
+                        exit;
+                    } catch (Exception $e) {
+                        echo $e->getMessage();
+                        exit;
+                    }
+                    ?>
                     <br>
                     <input type='submit' name='login' value='login' />
                 </div>
