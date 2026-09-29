@@ -104,6 +104,25 @@ function reg_school($conn){
     return true; // Registration successful
 }
 
+function reg_staff($conn){
+
+    // Prepare and execute the SQL query
+    $sql = "INSERT INTO career_adviser (f_name, s_name, career_email, password, school_id, amazon_id) VALUES (?, ?, ?, ?, ?, ?)";  //prepare the sql to be sent
+
+    $stmt = $conn->prepare($sql); //prepare to sql
+
+    $stmt->bindParam(1, $_POST['f_name']);  //bind parameters for security
+    $stmt->bindParam(2, $_POST['s_name']);
+    $stmt->bindParam(3, $_POST['career_email']);
+    $stmt->bindParam(4, password_hash($_POST["password"], PASSWORD_DEFAULT));
+    $stmt->bindParam(5, $_POST['school_id']);
+    $stmt->bindParam(6, $_POST['amazon_id']);
+
+    $stmt->execute();  //run the query to insert
+    $conn = null;  // closes the connection so cant be abused.
+    return true; // Registration successful
+}
+
 function school_getter($conn){
     // function to get all the schools for a drop down
 
