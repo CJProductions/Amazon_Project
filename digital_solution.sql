@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 28, 2026 at 10:43 AM
+-- Generation Time: Sep 29, 2026 at 12:50 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -68,9 +68,16 @@ CREATE TABLE `school` (
   `school_id` int NOT NULL,
   `school_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `school_phone` text NOT NULL,
-  `school_email` int NOT NULL,
+  `school_email` text NOT NULL,
   `amazon_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `school`
+--
+
+INSERT INTO `school` (`school_id`, `school_name`, `school_phone`, `school_email`, `amazon_id`) VALUES
+(1, 'UTC Leeds', '895742', 'utc@utc.co.uk', 1);
 
 -- --------------------------------------------------------
 
@@ -146,7 +153,7 @@ ALTER TABLE `career_adviser`
 -- AUTO_INCREMENT for table `school`
 --
 ALTER TABLE `school`
-  MODIFY `school_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `school_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `t_level_student`
