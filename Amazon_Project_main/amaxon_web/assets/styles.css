@@ -173,15 +173,14 @@ label {
 
     height: 35px;
     border: solid black 1px;
-    border-radius: 14px;
+    border-radius: 24px;
     background: #FF9900;
     font-size: 28px;
     font-weight: bold;
     font-family: Arial,sans-serif;
-    margin: 40px 0;
+
     color: black;
-    border-top: 20px;
-    border-bottom: 20px;
+
 }
 
 
@@ -195,6 +194,7 @@ label {
     margin-right: 20px;
     border-radius: 20px 20px 0 0;
     border-bottom: 3px solid transparent;
+
 }
 
 .aitop {
