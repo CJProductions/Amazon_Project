@@ -31,5 +31,5 @@ require_once("assets/ai.php");
         <a href="https://amazonapprenticeships.co.uk/support"> support resources </a>
         <a href="https://www.aboutamazon.co.uk/amazon-for-schools/online-hub-offerings/t-level-placements">t-level placements</a>
         <a href="https://amazonapprenticeships.co.uk/our-programmes">programmes</a>
-        <a href="assets/Amazonipcasestudy.pdf" download="amazoninT-levels">Download the PDF</a>
+        <a href="assets/Amazonipcasestudy.pdf" download="amazon in T-levels">Download the PDF</a>
     </div>
