@@ -59,11 +59,11 @@ try {
             <form method="post" action=""> <!-- make a form for users to input information-->
                 <div class="label_div">
 
-                    <label for="email"><strong>Email Address::</strong></label><br>
+                    <label for="email"><strong>Email Address</strong></label><br>
                     <input type="email" name="email" id="email" placeholder="Email" required>
                     <br>
 
-                    <label for="password"><strong>Password:</strong>:</label><br>
+                    <label for="password"><strong>Password</strong></label><br>
                     <input type="password" name="Password" id="Password" placeholder="Password" required>
                     <br>
 
