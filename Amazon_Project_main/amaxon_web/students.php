@@ -20,15 +20,15 @@ require_once("assets/ai.php");
     <div class="label_div">
         <!-- text bulk -->
         <h2>Students</h2>
-        <h1>Discover your Future with T-Level.</h1>
-        <p>T Levels are two-year technical qualifications that help you develop the knowledge and practical skills you need to build a career in the digital industry.
-            You will blend classroom learning with industry experience, with the chance to explore areas such as software development, cybersecurity, networking, data and digital production.
-            Supported by companies like Amazon, you can learn more about how digital skills are used in real workplaces and start gaining experience for your future career.
+        <h1> Why placements are important.</h1>
+        <p>Placements are important in amazon as it opens the window to a wide range of opportunities leading into careers with amazon.
         </p>
-
-        <h1>Build Career Skills</h1>
-        <p>A Digital T Level can help you develop more than just technical knowledge.
-            You’ll have opportunities to improve your teamwork, communication, problem-solving and professional skills while working on realistic projects.
-            Whether you’re interested in working in technology, continuing into higher education or exploring an apprenticeship, a T Level can help you take the next step towards your career.</p>
-        <br>
+        <h1>Where Can This Take You</h1>
+        <p>This includes roles such as degree apprenticeships in specialist fields in the country. For example, you will be learning from specialists at amazon and also gaining experience
+        at university granting you an apprenticeships
+        </p>
+        <h1>Key Document Links</h1>
+        <a href="https://amazonapprenticeships.co.uk/support"> support resources </a>
+        <a href="https://www.aboutamazon.co.uk/amazon-for-schools/online-hub-offerings/t-level-placements">t-level placements</a>
+        <a href="https://amazonapprenticeships.co.uk/our-programmes">programmes</a>
     </div>
