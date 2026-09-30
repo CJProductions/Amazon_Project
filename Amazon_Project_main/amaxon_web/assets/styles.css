@@ -1,9 +1,28 @@
+
+/* main parts */
+
 body {
     background-color: #353e51;
     margin: 0;
     color: white;
     font-family: Arial, serif;
 }
+
+h2 {
+    font-size: 75px;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 1.8rem;
+    display: block; /* Forces the label to sit directly above the input box */
+    margin-bottom: 8px; /* Adds breathing room below the text */
+    text-align: center;
+    align-content: center;
+
+}
+
+/* class */
 
 .navi {
     margin: 0;
@@ -12,35 +31,7 @@ body {
     display: flex;
 }
 
-#m_title {
-    margin: 0;
-    font-size: 75px;
-    border: #232f3e solid 20px;
-    background-color: #232f3e;
-    margin-left: 150px;
-}
 
-#set {
-    width: 100px;
-    height: auto;
-    filter: invert(100%);
-    position: absolute;
-    padding: 10px;
-}
-
-#azon {
-    width: 350px;
-    height: 100px;
-    position: absolute;
-    right: 20px;
-    top: 8%;
-    transform: translateY(-50%);
-}
-
-#thick_hr {
-    margin: 0;
-    border: 8px solid #FF9900;
-}
 
 .navbar {
     display: flex;
@@ -64,11 +55,6 @@ body {
     background-color: #18212b;
 }
 
-#imgbanner {
-    height: 650px;
-    width: auto;
-}
-
 .basics {
     padding: 30px;
     h1 {
@@ -80,23 +66,6 @@ body {
         font-size: 30px;
     }
 }
-
-h2 {
-    font-size: 75px;
-    text-decoration: underline;
-}
-
-label {
-    font-size: 1.8rem;
-
-    display: block; /* Forces the label to sit directly above the input box */
-    margin-bottom: 8px; /* Adds breathing room below the text */
-    text-align: center;
-    align-content: center;
-
-}
-
-
 
 .label_div {
     text-align: center;
@@ -130,9 +99,8 @@ label {
 .label_div input[type=text],
 .label_div input[type=password],
 .label_div input[type=email] {
-    margin: 20px 0;
     font-size: 30px;
-    margin-top: 0;
+    margin: 0 0 20px;
     padding: 2px 20px;
     border: solid black 1px;
     border-radius: 10px;
@@ -145,7 +113,6 @@ label {
 .label_div input:focus{
     outline: none;
 }
-
 
 .label_div select {
     font-size: 35px;
@@ -163,14 +130,11 @@ label {
 .label_div option {
 }
 
-
-
 ::-webkit-scrollbar {
     display: none;
 }
 /*links*/
 .label_div a{
-
     height: 35px;
     border: solid black 1px;
     border-radius: 14px;
@@ -204,13 +168,6 @@ label {
     border-radius: 20px 20px 0 0;
     display: flex;
     align-items: center;
-}
-
-#title {
-    margin-left: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color:black;
 }
 
 .aimain label {
@@ -256,3 +213,46 @@ label {
     color: #FF990033;
 }
 
+/* ids */
+#m_title {
+    margin: 0;
+    font-size: 75px;
+    border: #232f3e solid 20px;
+    background-color: #232f3e;
+    margin-left: 150px;
+}
+
+#set {
+    width: 100px;
+    height: auto;
+    filter: invert(100%);
+    position: absolute;
+    padding: 10px;
+}
+
+#azon {
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    right: 20px;
+    top: 8%;
+    transform: translateY(-50%);
+}
+
+#thick_hr {
+    margin: 0;
+    border: 8px solid #FF9900;
+}
+
+#title {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color:black;
+}
+
+#imgbanner {
+    height: 650px;
+    width: auto;
+}
+/* please but your id and classes the the right spot */
