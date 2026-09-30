@@ -6,14 +6,8 @@ require_once "assets/dbconn.php";  // bring in the dbconnection, not ideal way t
 
 
 $_SESSION['Title'] = "Enroll";
-
-#check if post
-
-#check password match
-
-#check if only user
-
-# register user
+?>
+<?php
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_POST["password"] == $_POST["cPassword"]) {

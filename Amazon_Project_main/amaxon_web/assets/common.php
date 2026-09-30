@@ -40,6 +40,57 @@ function onlyuser($conn, $email){ // at registration check to make sure there no
 }
 
 # user reg
+
+
+# user login
+function login($conn, $email){
+    $sql = "SELECT student_id, password FROM t_level_student WHERE student_email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $email);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $conn = null;
+
+    if ($result) {
+        return $result;
+    } else {
+        return false;
+    }
+}
+
+function stafflogin($conn, $email){
+    $sql = "SELECT career_id, password FROM career_adviser WHERE career_email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $email);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $conn = null;
+
+    if ($result) {
+        return $result;
+    } else {
+        return false;
+    }
+}
+
+function getstaffid($conn, $email){
+    $sql = "SELECT career_id, password FROM career_adviser WHERE career_email = ?"; // get only one student_id since there's unique emails (meaning only one can exist)
+    $stmt = $conn->prepare($sql); // prepare
+    $stmt->bind_param(1, $email); // bind the param for security
+    $stmt->execute(); // run sql
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["career_id"];
+}
+#get user id
+function getuserid($conn, $email){
+    $sql = "SELECT student_id, password FROM t_level_student WHERE student_email = ?"; // get only one student_id since there's unique emails (meaning only one can exist)
+    $stmt = $conn->prepare($sql); // prepare
+    $stmt->bind_param(1, $email); // bind the param for security
+    $stmt->execute(); // run sql
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["student_id"];
+}
+
 function reg_user($conn){
     // prepare sql
     $sql = "INSERT INTO t_level_student (f_name, s_name, student_email, password, year_group, pathway, school_id, career_id) VALUES(?,?,?,?,?,?, ?,?)";
@@ -59,33 +110,6 @@ function reg_user($conn){
     $conn = null; // closes the connection so can't be abused
     return true; // register successful
 }
-
-# user login
-function login($conn, $email){
-    $sql = "SELECT * FROM t_level_student WHERE student_email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(1, $email);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $conn = null;
-
-    if ($result) {
-        return $result;
-    } else {
-        return false;
-    }
-}
-
-#get user id
-function getuserid($conn, $email){
-    $sql = "SELECT student_id FROM t_level_student WHERE student_email = ?"; // get only one student_id since there's unique emails (meaning only one can exist)
-    $stmt = $conn->prepare($sql); // prepare
-    $stmt->bind_param(1, $email); // bind the param for security
-    $stmt->execute(); // run sql
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result["student_id"];
-}
-
 function reg_school($conn){
 
     // Prepare and execute the SQL query

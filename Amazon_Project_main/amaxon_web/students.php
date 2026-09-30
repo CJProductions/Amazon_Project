@@ -2,6 +2,10 @@
 <?php
 session_start();
 $_SESSION['Title'] = " T-level Student";
+
+require_once "assets/common.php";
+require_once "assets/dbconn.php";
+
 ?>
 <html> <!-- The start of the HTML page. -->
 <head> <!-- The head of the page, usually has the title, which is the tab's name as well as the link to the stylesheet to decorate the website. -->
@@ -33,3 +37,7 @@ require_once("assets/ai.php");
         <a href="https://amazonapprenticeships.co.uk/our-programmes">programmes</a>
         <a href="assets/Amazonipcasestudy.pdf" download="Amazon in T-levels">Download the PDF</a>
     </div>
+
+
+    </body>
+    </html>

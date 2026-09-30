@@ -6,29 +6,27 @@ require_once "assets/dbconn.php";
 
 
 $_SESSION['Title'] = "Sign In";
-
-
+?>
+<?php
 try {
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(!isset($_SESSION["student_id"])) {
             $_SESSION["usermessage"] = "You are already logged in.";
-            header("Location: signin.php");
+            header("Location: students.php");
             exit;
         }
-        elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usr = login(dbconnect_insert(), $_POST["email"]);
 
-            if($usr && password_verify($_POST["password"], $usr["password"])) {
+            if ($usr && password_verify($_POST["password"], $usr["password"])) {
                 $_SESSION["usermessage"] = "You are now logged in.";
                 $_SESSION["student_id"] = getuserid(dbconnect_insert(), $_POST["email"]);
-                header("Location: index.php");
+                header("Location: students.php");
                 exit;
-            }
-            elseif (!$usr) {
+            } elseif (!$usr) {
                 $_SESSION["usermessage"] = "invalid email or password.";
                 header("Location: signin.php");
-            }
-            else{
+            } else {
                 $_SESSION["usermessage"] = "something went wrong.";
                 header("Location: signin.php");
                 exit;
@@ -41,7 +39,7 @@ try {
     exit;
 } catch (Exception $e) {
     $_SESSION['usermessage'] = $e->getMessage();
-    header("Location: sigin.php");
+    header("Location: signin.php");
     exit;
 }
 ?>
