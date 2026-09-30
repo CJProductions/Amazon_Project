@@ -14,7 +14,8 @@ try {
             $_SESSION["usermessage"] = "You are already logged in.";
             header("Location: signin.php");
             exit;
-        } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+        }
+        elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usr = login(dbconnect_insert(), $_POST["email"]);
 
             if($usr && password_verify($_POST["password"], $usr["password"])) {
@@ -22,10 +23,12 @@ try {
                 $_SESSION["student_id"] = getuserid(dbconnect_insert(), $_POST["email"]);
                 header("Location: index.php");
                 exit;
-            } elseif (!$usr) {
+            }
+            elseif (!$usr) {
                 $_SESSION["usermessage"] = "invalid email or password.";
                 header("Location: signin.php");
-            } else{
+            }
+            else{
                 $_SESSION["usermessage"] = "something went wrong.";
                 header("Location: signin.php");
                 exit;
@@ -57,6 +60,7 @@ try {
     ?>
 
             <form method="post" action=""> <!-- make a form for users to input information-->
+                <?php echo user_message(); ?>
                 <div class="label_div">
 
                     <label for="email"><strong>Email Address</strong></label><br>
@@ -64,7 +68,7 @@ try {
                     <br>
 
                     <label for="password"><strong>Password</strong></label><br>
-                    <input type="password" name="Password" id="Password" placeholder="Password" required>
+                    <input type="password" name="password" id="Password" placeholder="Password" required>
                     <br>
 
                     <input type='submit' name='login' value='login' />

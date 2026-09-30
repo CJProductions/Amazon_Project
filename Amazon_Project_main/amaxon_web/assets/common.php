@@ -3,9 +3,9 @@
 # user message
 function user_message(){
     $message = "";
-    if(isset($_SESSION["user_message"])) {
-        $message = $_SESSION["user_message"];
-        unset($_SESSION["user_message"]);
+    if(isset($_SESSION["usermessage"])) {
+        $message = $_SESSION["usermessage"];
+        unset($_SESSION["usermessage"]);
     }
     return $message;
 }
@@ -32,7 +32,7 @@ function onlyuser($conn, $email){ // at registration check to make sure there no
     $stmt->execute(); //run sql
     $result = $stmt->fetch(PDO::FETCH_ASSOC); // bring results
     if ($result) { // if user is returned
-        return false; // return false so y
+        return false;
     } else {
         return true;
     }
@@ -42,7 +42,7 @@ function onlyuser($conn, $email){ // at registration check to make sure there no
 # user reg
 function reg_user($conn){
     // prepare sql
-    $sql = "INSERT INTO t_level_student (f_name, s_name, student_email, password, year_group, pathway, school_id, amazon_id, career_id) VALUES(?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO t_level_student (f_name, s_name, student_email, password, year_group, pathway, school_id, career_id) VALUES(?,?,?,?,?,?, ?,?)";
     $stmt = $conn->prepare($sql);
 
     // list and bind all parameters for security
@@ -53,8 +53,7 @@ function reg_user($conn){
     $stmt->bindParam(5, $_POST["year_group"]);
     $stmt->bindParam(6, $_POST["pathway"]);
     $stmt->bindParam(7, $_POST["school_id"]);
-    $stmt->bindParam(8, $_POST["amazon_id"]);
-    $stmt->bindParam(9, $_POST["career_id"]);
+    $stmt->bindParam(8, $_POST["career_id"]);
 
     $stmt->execute(); // run the query
     $conn = null; // closes the connection so can't be abused
@@ -63,11 +62,11 @@ function reg_user($conn){
 
 # user login
 function login($conn, $email){
-    $sql = "SELECT student_id, password FROM t_level_student WHERE student_email = ?";
+    $sql = "SELECT * FROM t_level_student WHERE student_email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $email);
     $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $conn = null;
 
     if ($result) {

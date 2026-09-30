@@ -22,16 +22,19 @@ try {
                     $_SESSION["usermessage"] = "You are successfully registered.";
                     header("Location: signin.php");
                     exit;
-                } else {
+                }
+                else {
                     $_SESSION["usermessage"] = "There was an error registering your account.";
                     header("Location: enroll.php");
                     exit;
                 }
-            } else {
+            }
+            else {
                 $_SESSION["usermessage"] = "Email not unique.";
                 header("Location: enroll.php");
             }
-        } else {
+        }
+        else {
             $_SESSION["usermessage"] = "Passwords do not match.";
             header("Location: enroll.php");
             exit;
@@ -62,6 +65,8 @@ try {
     ?>
 
             <form method="post" action="">
+<?php
+                echo user_message();?>
                 <div class="label_div">
 
 
@@ -116,38 +121,10 @@ try {
                     </select>
 
 
-                    <label for="Password"><strong>Password</strong>:</label><br>
-                    <input type="password" name="password" id="Password" placeholder="Password" required>
+                    <label for="password"><strong>Password</strong>:</label><br>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                     <label for="cPassword"><strong>Password Confirmation</strong>:</label><br>
                     <input type="password" name="cPassword" id="cPassword" placeholder="Password confirm" required>
-                    <br>
-                    <label for="amazon_id">Amazon Mentor</label>
-                    <?php
-
-                    try {
-                        $amazons = amazon_getter(dbconnect_insert());
-                        echo '<select name="amazon_id" id="amazon_id">' . "\n";
-
-                        echo '    <option value="">-- Please select an Amazon staff member --</option>' . "\n";
-
-                        foreach ($amazons as $amazon) {
-
-
-                            echo ' <option value="' . $amazon["amazon_id"] . '">' . $amazon["username"] . '</option>' . "\n";
-                        }
-
-                        echo '</select>';
-
-
-
-                    } catch (PDOException $e) {
-                        echo $e->getMessage();
-                        exit;
-                    } catch (Exception $e) {
-                        echo $e->getMessage();
-                        exit;
-                    }
-                    ?>
                     <br>
                     <label for="career_id">School staff</label>
                     <?php
