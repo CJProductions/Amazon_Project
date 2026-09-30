@@ -43,13 +43,13 @@ exit;
 ?>
 
 <form action='' method='post'>
-    <br>
-    <input type='text' name='school_name' placeholder='School name' required/>
-    <br>
-    <input type='text' name='school_phone' placeholder='School Phone' required/>
-    <br>
-    <input type='email' name='school_email' placeholder='School E-mail Address' required/>
-    <br>
+    <div class="label_div">
+        <input type='text' name='school_name' placeholder='School name' required/>
+        <input type='text' name='school_phone' placeholder='School Phone' required/>
+        <input type='email' name='school_email' placeholder='School E-mail Address' required/>
+        <input type='submit' name='submit' value='Register' />
+
+
     <?php
 
     try {
@@ -76,8 +76,8 @@ exit;
     }
     ?>
 
-    <input type='submit' name='submit' value='Register' />
-    <br>
+
+    </div>
 </form>
 
 
