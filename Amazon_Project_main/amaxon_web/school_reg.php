@@ -46,38 +46,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
 
 <form action='' method='post'>
     <div class="label_div">
+        <label for="school_name">School name</label>
         <input type='text' name='school_name' placeholder='School name' required/>
+        <br>
+        <label for="school_phone">School Phone Number</label>
         <input type='text' name='school_phone' placeholder='School Phone' required/>
+        <br>
+        <label for="school_email">School Email</label>
         <input type='email' name='school_email' placeholder='School E-mail Address' required/>
-        <input type='submit' name='submit' value='Register' />
+        <br>
+        <label for="amazon_id">Amazon Person</label>
+        <?php
+
+        try {
+            $amazons = amazon_getter(dbconnect_insert());
+            echo '<select name="amazon_id" id="amazon_id">' . "\n";
+
+            echo '    <option value="">-- Please select an Amazon staff member --</option>' . "\n";
+
+            foreach ($amazons as $amazon) {
 
 
-    <?php
+                echo ' <option value="' . $amazon["amazon_id"] . '">' . $amazon["username"] . '</option>' . "\n";
+            }
 
-    try {
-        $amazons = amazon_getter(dbconnect_insert());
-        echo '<select name="amazon_id" id="amazon_id">' . "\n";
-
-        echo '    <option value="">-- Please select an Amazon staff member --</option>' . "\n";
-
-        foreach ($amazons as $amazon) {
+            echo '</select>';
 
 
-            echo ' <option value="' . $amazon["amazon_id"] . '">' . $amazon["username"] . '</option>' . "\n";
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            exit;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            exit;
         }
-
-        echo '</select>';
-
-
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-        exit;
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        exit;
-    }
-    ?>
-
+        ?>
+        <br>
+        <input type='submit' name='submit' value='Register' />
 
     </div>
 </form>

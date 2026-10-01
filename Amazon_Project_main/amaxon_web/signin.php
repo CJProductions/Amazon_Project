@@ -21,7 +21,7 @@ try {
             if($usr && password_verify($_POST["password"], $usr["password"])) {
                 $_SESSION["usermessage"] = "You are now logged in.";
                 $_SESSION["student_id"] = getuserid(dbconnect_insert(), $_POST["email"]);
-                header("Location: index.php");
+                header("Location: students.php");
                 exit;
             }
             elseif (!$usr) {
