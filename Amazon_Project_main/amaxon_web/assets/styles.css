@@ -70,11 +70,11 @@ label {
 .label_div {
     text-align: center;
     background: #18212b;
-    margin: 40px;
     border-radius: 50px;
     border:solid black 1px;
     width:60%;
     justify-self: center;
+    height: auto;
 
 }
 
@@ -135,16 +135,18 @@ label {
 }
 /*links*/
 .label_div a{
-    height: 35px;
+    display: inline-block;
+    height: auto;
     border: solid black 1px;
     border-radius: 24px;
     background: #FF9900;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     font-family: Arial,sans-serif;
-
+    text-decoration: 0px;
+    padding: 15px;
     color: black;
-
+    margin-bottom: 40px;
 }
 
 
