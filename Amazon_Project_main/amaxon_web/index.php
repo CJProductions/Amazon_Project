@@ -16,7 +16,7 @@ $_SESSION['Title'] = "Home";
         ?>
 
         <div> <!-- The division for the image banner on the home page. -->
-            <img src="assets/images/amazon_tlevel.png" alt="Amazon T-Level" id="imgbanner">
+            <img src="assets/images/amazon_t-level.png" alt="Amazon T-Level" id="imgbanner">
         </div>
 
         <div class="basics"> <!-- The information on the home page. -->

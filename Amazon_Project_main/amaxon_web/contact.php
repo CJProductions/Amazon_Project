@@ -28,7 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
 <html lang=""> <!-- start html -->
 
 <head>
-
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <?php require_once "assets/navi.php";
+    require_once "assets/ai.php";?>
     <div class="label_div"> <!-- refer to label_div to style the content below -->
         <form method="post" action=""> <!-- form for user inputs -->
 
@@ -38,18 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
             <label for="s_name">Second name</label>
             <input type="text" name="s_name" id="s_name" placeholder="Second name" required>
             <br>
-            <label for="email"><strong>Email address:</strong></label><br>
-            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="email"><strong>Email address</strong></label><br>
             <input type="email" name="career_email" id="email" placeholder="Email" required>
             <br>
-
-            <label for="subject">Subject:</label><br>
-            <input type="text" name="subject" id="subject" placeholder="Subject" required>
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <br>
             <label for="school">School</label>
-            <br>
             <?php
 
             try {
