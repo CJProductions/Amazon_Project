@@ -14,7 +14,6 @@ try {
             header("Location: students.php");
             exit;
         }
-
         elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usr = login(dbconnect_insert(), $_POST["email"]);
 
