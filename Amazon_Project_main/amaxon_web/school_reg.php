@@ -24,21 +24,23 @@ require_once "assets/dbconn.php";
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  // checks for post condition
 
-try {  //
-if (reg_school(dbconnect_insert())) {  // ensures they are the only user and then registers them
-$_SESSION['usermessage'] = "School Registration Successful";
-header("Location: index.php");  // redirects them to login page
-exit;  // ensures no other code in executed
-}
-} catch (PDOException $e) {  // catch database error
-$_SESSION['usermessage'] = "School Registration Successful";
-header("Location: index.php");  // redirects them to login page
-exit;
-} catch (Exception $e) {  // Catches all other errors
-$_SESSION['usermessage'] = "School Registration Successful";
-header("Location: index.php");  // redirects them to login page
-exit;
-}
+    try {  //
+        if (reg_school(dbconnect_insert())) {  // ensures they are the only user and then registers them
+            $_SESSION['usermessage'] = "School Registration Successful";
+            header("Location: index.php");  // redirects them to login page
+            exit;  // ensures no other code in executed
+        }
+    }
+    catch (PDOException $e) {  // catch database error
+        $_SESSION['usermessage'] = "School Registration Successful";
+        header("Location: index.php");  // redirects them to login page
+        exit;
+    }
+    catch (Exception $e) {  // Catches all other errors
+        $_SESSION['usermessage'] = "School Registration Successful";
+        header("Location: index.php");  // redirects them to login page
+        exit;
+    }
 }
 ?>
 

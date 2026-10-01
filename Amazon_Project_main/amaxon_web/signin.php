@@ -1,20 +1,20 @@
 <?php
 
-session_start(); # server side storage session lasts like 5 mins
 require_once "assets/common.php";
 require_once "assets/dbconn.php";
-
 
 $_SESSION['Title'] = "Sign In";
 
 
 try {
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(!isset($_SESSION["student_id"])) {
+
+        if (!isset($_SESSION["student_id"])) {
             $_SESSION["usermessage"] = "You are already logged in.";
-            header("Location: signin.php");
+            header("Location: students.php");
             exit;
         }
+
         elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usr = login(dbconnect_insert(), $_POST["email"]);
 
@@ -41,7 +41,7 @@ try {
     exit;
 } catch (Exception $e) {
     $_SESSION['usermessage'] = $e->getMessage();
-    header("Location: sigin.php");
+    header("Location: signin.php");
     exit;
 }
 ?>
@@ -53,12 +53,10 @@ try {
         <link rel="stylesheet" href="assets/styles.css">
     </head>
     <body>
-
     <?php
-    require_once('assets/navi.php');
-    require_once("assets/ai.php");
-    ?>
-
+        require_once('assets/navi.php');
+        require_once("assets/ai.php");
+        ?>
             <form method="post" action=""> <!-- make a form for users to input information-->
                 <?php echo user_message(); ?>
                 <div class="label_div">
